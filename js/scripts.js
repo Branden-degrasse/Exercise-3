@@ -2,7 +2,7 @@
 
 
 function Image(url, tags) {
-	this.url = url;
+	this.urlimg = url;
 	this.tags = tags;
 	this.display = function() {
 
@@ -10,25 +10,28 @@ function Image(url, tags) {
 		this.tags.forEach(function(tag){
 			container.addClass(tag);
 		})
-		container.addClass("images")
+		container.addClass("urlimg")
 
-		var url = "";
-		url += "<img src="+ this.url + ">";
+		var urlasdf = "";
+		urlasdf += "<img src="+ this.urlimg + ">";
 
-		container.html(url)
-		$(".images").prepend(container)
+		container.html(urlasdf)
+		$(".imagesSkins").prepend(container)
 	}
 }
 
-var images = [
-	new Image("imgs/Draven.jpg", ["painting", "mistakes"]),
+var imagesSkins = [
+	new Image("imgs/Draven.jpg", ["Mecha Kingdoms", "Marksman"]),
+	new Image("imgs/Jax.jpg", ["Mecha Kingdoms", "Fighter"]),
+	new Image("imgs/Sett.jpg", ["Mecha Kingdoms", "Fighter"])
 ]
 
 //global taglist
 var tagList = []
-images.forEach(function(quote){
-	quote.display();
-	quote.tags.forEach(function(tag){
+
+imagesSkins.forEach(function(urlimg){
+	urlimg.display();
+	urlimg.tags.forEach(function(tag){
 		// check to see if tag has been added to taglist
 			if(!tagList.includes(tag)){
 				// if it isnt added, add it
@@ -38,15 +41,15 @@ images.forEach(function(quote){
 			}
 	})
 })
-console.log(tagList);
+console.log(tagList)
 
 $(".filter").on("click", function(){
 	var tag = $(this).attr("id");
 	console.log(tag)
 
-	$(".images").not("." + tag).hide();
+	$(".urlimg").not("." + tag).hide();
 	$("." + tag).fadeIn();
 
-	$("filter").removeClass("active")
+	$(".filter").removeClass("active")
 	$(this).addClass("active")
 })
