@@ -15,7 +15,7 @@ function Image(url, tags, author, title) {
 		container.addClass("urlimg")
 
 		var urlasdf = "";
-		urlasdf += "<img src="+ this.urlimg + ">";
+		urlasdf += "<img src="+ this.urlimg + " alt= League>";
 		urlasdf += "<p>" + this.title + "</p>";
 		urlasdf += "<cite>" + this.author + "</cite";
 
@@ -37,14 +37,17 @@ var imagesSkins = [
 	new Image("imgs/Senna.jpg", ["High-Noon", "Marksman", "All"], "Kelly Aleshire", "High Noon Senna"),
 	new Image("imgs/Karma.jpg", ["Dark-Star", "Mage", "All"], "Bo Chen", "Dark Cosmic Karma"),
 	new Image("imgs/Jhin.jpg", ["Dark-Star", "Marksman", "All"], "Bo Chen", "Dark Star Jhin"),
-	new Image("imgs/Mord.jpg", ["Dark-Star", "Fighter", "All"], "Bo Chen", "Dark Star Mordekaiser"),
+	new Image("imgs/Mord.jpg", ["Dark-Star", "Fighter", "All"], "Bo Chen", "Dark Star Mordekaiser")
 ]
+
 
 //global taglist
 var tagList = []
 
+
 imagesSkins.forEach(function(urlimg){
 	urlimg.display();
+
 	urlimg.tags.forEach(function(tag){
 		// check to see if tag has been added to taglist
 			if(!tagList.includes(tag)){
@@ -52,6 +55,8 @@ imagesSkins.forEach(function(urlimg){
 				tagList.push(tag);
 				// and also make a button for it.
 				$(".buttons").prepend("<button class='filter' id='" + tag + "'>" + tag + "</button>")
+
+				
 			}
 	})
 })

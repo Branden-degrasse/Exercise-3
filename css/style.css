@@ -12,8 +12,8 @@ img{
 	max-width: 100%;
 }
 div > div{
-	width: 500px;
-	height: 500px;
+	width: 400px;
+	height: 400px;
 	padding: 25px;
 	margin-bottom: 25px;
 }
@@ -27,14 +27,19 @@ cite{
 	justify-content: space-evenly;
 }
 .active{
-	background: lightblue;
+	background: #9932CC;
 }
 .buttons{
-	border-radius: 50px;
 	padding: 20px;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+.filter:hover {
+  background-color: #9932CC;
 }
 .filter{
 	font-family: 1em;
+	margin-right: 10px;
+	border-radius: 8px;
 }
 
