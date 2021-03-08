@@ -4,6 +4,7 @@
 html, body {
 	min-height: 100vh;
 	margin: 0;
+	font-family: 'Roboto', sans-serif;
 }
 img{
 	max-width: 100%;
@@ -11,6 +12,7 @@ img{
 .imagesSkins{
 	width:250px;
 	height: 50px;
+	display: flex;
 
 }
 div > div{
@@ -20,4 +22,14 @@ div > div{
 }
 .active{
 	background: pink;
+}
+.buttons{
+	border-radius: 50px;
+	padding: 20px;
+}
+p{
+
+}
+cite{
+	font-size: 14px;
 }
